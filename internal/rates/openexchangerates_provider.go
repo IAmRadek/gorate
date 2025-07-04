@@ -202,7 +202,7 @@ func (o *OpenExchangeRatesProvider) getCurrencies(ctx context.Context) ([]*money
 	for code := range currencies {
 		currency := money.GetCurrency(code)
 		if currency == nil {
-			slog.ErrorContext(ctx, "currency not found in ISO currencies", "currency", code)
+			slog.ErrorContext(ctx, "currency not found", "currency", code)
 			continue
 		}
 
